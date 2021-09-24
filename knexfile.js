@@ -34,31 +34,7 @@ module.exports = {
   },
   production: {
     ...sharedConfig,
-    connection: "postgres://yjkciwjdxzjquh:a2e0e13b6035143c1ff0d1d395eeecfef55e69d6581714c9d8c1820645c238ad@ec2-52-0-93-3.compute-1.amazonaws.com:5432/d5hn30q6hmdq9g",
+    connection: process.env.DATABASE_URL,
     pool: { min: 2, max: 10 },
   },
 }
-
-
-// module.exports = {
-
-//   development: {
-//     client: 'sqlite3',
-//     connection: {
-//       filename: './data/database.db3'
-//     },
-//     useNullAsDefault: true,
-//     migrations: {
-//       directory: './data/migrations',
-//     },
-//     seeds: {
-//       directory: './data/seeds',
-//     },
-//     pool: {
-//       afterCreate: (conn, done) => {
-//         //runs after a connection is made to the sqlite engine
-//         conn.run('PRAGMA foreign_keys = ON', done);
-//       }
-//     }
-//   }
-// };
