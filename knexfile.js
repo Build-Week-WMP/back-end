@@ -11,7 +11,7 @@ require('dotenv').config()
     - password (in postgres:password, replace with the actual password of the postgres user)
     - database_name (use the real name of the development database you created in pgAdmin 4)
     - testing_database_name (use the real name of the testing database you created in pgAdmin 4) */
- 
+
 const pg = require('pg')
 
 if (process.env.DATABASE_URL) {
@@ -19,8 +19,8 @@ if (process.env.DATABASE_URL) {
 }
 const sharedConfig = {
   client: 'pg',
-  migrations: { directory: './api/data/migrations' },
-  seeds: { directory: './api/data/seeds' },
+  migrations: { directory: './data/migrations' },
+  seeds: { directory: './data/seeds' },
 }
 
 module.exports = {
